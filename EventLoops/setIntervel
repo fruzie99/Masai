@@ -1,0 +1,12 @@
+
+
+let count = 0;
+
+const loading = setInterval(() => {
+  console.log("Loading...");
+  count++;
+  if (count === 5) {    
+    clearInterval(loading);
+    console.log("Loaded successfully!");
+  }
+}, 1000);
