@@ -1,0 +1,16 @@
+{
+  "name": "studentcrud",
+  "version": "1.0.0",
+  "description": "Student Management CRUD API using Express and fs",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.0.0"
+  }
+}
