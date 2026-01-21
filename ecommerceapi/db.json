@@ -1,4 +1,34 @@
 {
-  "products": [],
-  "orders": []
+  "products": [
+    {
+      "id": 1705583000000,
+      "name": "Mobile",
+      "price": 20000,
+      "stock": 8
+    },
+    {
+      "id": 1705583010000,
+      "name": "Headphones",
+      "price": 3000,
+      "stock": 5
+    }
+  ],
+  "orders": [
+    {
+      "id": 1705583050000,
+      "productId": 1705583000000,
+      "quantity": 2,
+      "totalAmount": 40000,
+      "status": "delivered",
+      "createdAt": "2026-01-21"
+    },
+    {
+      "id": 1705583060000,
+      "productId": 1705583010000,
+      "quantity": 1,
+      "totalAmount": 3000,
+      "status": "cancelled",
+      "createdAt": "2026-01-21"
+    }
+  ]
 }
