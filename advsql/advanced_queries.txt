@@ -1,0 +1,167 @@
+1. Count the total number of students
+
+Query
+
+SELECT COUNT(*) AS total_students
+FROM students;
+
+
+Output
+
+total_students
+8
+
+2. Find the average age of students
+
+Query
+
+SELECT AVG(age) AS average_age
+FROM students;
+
+Output:
+average_age
+21.75
+3. Find the minimum and maximum age
+
+Query
+
+SELECT 
+    MIN(age) AS minimum_age,
+    MAX(age) AS maximum_age
+FROM students;
+
+
+Output
+
+minimum_age	maximum_age
+18	          25
+4. Count how many students are enrolled in each course
+
+Query
+
+SELECT  course,
+    COUNT(*) AS student_count
+FROM students
+GROUP BY course;
+
+
+Output
+
+course	            student_count
+Computer Science	   3
+Data Science	       2
+AI & ML                2
+Cyber Security	       1
+
+
+5. Count students whose age is greater than 20
+
+Query
+
+SELECT COUNT(*) AS students_above_20 FROM students WHERE age > 20;
+
+
+Output:
+
+students_above_20
+5
+
+
+
+
+6. Display course-wise student count
+
+Query
+
+SELECT course,COUNT(*) AS student_count FROM students GROUP BY course;
+
+
+Output
+
+course	             student_count
+Computer Science	     3
+Data Science	         2
+AI & ML	                 2
+Cyber Security	         1
+
+
+
+7. Display only courses where student count is greater than 1
+
+Query:
+
+SELECT course,COUNT(*) AS student_count FROM students GROUP BY course HAVING COUNT(*) > 1;
+
+
+Output
+
+course	student_count
+Computer Science	3
+Data Science	2
+AI & ML	2
+8. Display courses sorted by highest student count first
+
+
+Query
+
+SELECT course,COUNT(*) AS student_count FROM students GROUP BY course ORDER BY student_count DESC;
+
+
+Output
+
+course	           student_count
+Computer Science	 3
+Data Science	     2
+AI & ML	             2
+Cyber Security       1
+
+
+
+9. Fetch the latest 3 students based on created_at
+
+Query
+
+SELECT * FROM students ORDER BY created_at DESC LIMIT 3;
+
+
+Output
+
+id	   name   	email	     age	  course	    created_at
+8	Riya	riya@gmail.com   22	 Data Science	    2024-10-18 10:30:00
+7	Arjun	arjun@gmail.com  24	 AI & ML	        2024-10-17 14:20:00
+6	Neha	neha@gmail.com   21	 Computer Science	2024-10-16 09:15:00
+
+
+
+10. Fetch the top 5 oldest students
+
+Query
+
+SELECT * FROM students ORDER BY age DESC LIMIT 5;
+
+
+Output
+
+id	name	email	            age	 course
+5	Rahul	rahul@gmail.com     25	 Cyber Security
+7	Arjun	arjun@gmail.com     24	 AI & ML
+2	Sneha	sneha@gmail.com     23	 Computer Science
+8	Riya	riya@gmail.com      22	 Data Science
+6	Neha	neha@gmail.com      21	 Computer Science
+
+
+
+
+11. Fetch students enrolled in a specific course, sorted by age (descending)
+
+Query
+
+SELECT * FROM students WHERE course = 'Computer Science' ORDER BY age DESC;
+
+
+Output
+
+id	name	email	          age
+2	Sneha	sneha@gmail.com   23
+6	Neha	neha@gmail.com    21
+1	Aman	aman@gmail.com    19
